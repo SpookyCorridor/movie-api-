@@ -21,7 +21,7 @@ class Movies < Sinatra::Base
 
     def get_movie(movie)
         case movie
-        when 'kill-bill'
+        when 'killbill'
           movie_data('Kill Bill Vol. 1', '2003', 
             'A former assassin, known simply as The Bride (Uma Thurman), wakes from a coma four years after her jealous ex-lover Bill (David Carradine) attempts to murder her on her wedding day.')
         when 'edward-scissorhands'
