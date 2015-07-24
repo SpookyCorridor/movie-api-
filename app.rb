@@ -5,12 +5,14 @@ require 'sinatra/base'
 
 class Movies < Sinatra::Base
 
+    register Sinatra::CrossOrigin 
+
     def movie_data(name, release_year, description)
     {:name => name.to_s, :release_year => release_year.to_s, :description => description.to_s}.to_json
     end 
 
      get '/' do 
-      'Welcome to the movie API! To find a movie type: /api/song-name' 
+      'Welcome to the movie API! To find a movie type: /api/movie-name' 
     end 
 
     get '/api/:name' do 
@@ -21,7 +23,7 @@ class Movies < Sinatra::Base
 
     def get_movie(movie)
         case movie
-        when 'killbill'
+        when 'kill-bill'
           movie_data('Kill Bill Vol. 1', '2003', 
             'A former assassin, known simply as The Bride (Uma Thurman), wakes from a coma four years after her jealous ex-lover Bill (David Carradine) attempts to murder her on her wedding day.')
         when 'edward-scissorhands'
